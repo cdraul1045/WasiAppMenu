@@ -1,0 +1,37 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "7e8ff2bf4c8b112dc56082234f856fdb",
+    "entities": [
+      {
+        "tableName": "marca",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id_marca` INTEGER NOT NULL, `nombre` TEXT NOT NULL, PRIMARY KEY(`id_marca`))",
+        "fields": [
+          {
+            "fieldPath": "idMarca",
+            "columnName": "id_marca",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nombre",
+            "columnName": "nombre",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id_marca"
+          ]
+        }
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '7e8ff2bf4c8b112dc56082234f856fdb')"
+    ]
+  }
+}
